@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hightorque Robot SDK
 
 高擎机器人电机控制SDK，提供C++库和Python接口，用于控制高擎关节电机。
@@ -294,3 +295,6 @@ hightorque_robot/
 ## 联系方式
 
 如有问题或建议，请提交Issue或联系项目维护者。
+=======
+# LiteArm-A1
+>>>>>>> 448257d35a87d1ba57d89df82eab28a02f0acd54
