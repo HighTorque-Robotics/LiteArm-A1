@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Determine our canonical location
+if (perl -e '' 2>/dev/null)
+  then mydir="$(dirname "$(perl -MCwd -le 'print Cwd::abs_path(shift)' "$0")")"
+  else mydir="$(dirname "$0")"
+fi
+
+# Find dependency JARs
+if [ -e "$mydir/lcm.jar" ]; then
+  jars="$mydir/lcm.jar"
+elif [ -e "$mydir/../share/java/lcm.jar" ]; then
+  jars="$mydir/../share/java/lcm.jar"
+else
+  echo "Unable to find 'lcm.jar'; please check your installation" >&2
+  exit 1
+fi
+
+# Find jchart2d and its dependencies separately since it may not exist relative to lcm.jar.
+if [ -e "$mydir/jchart2d-code/jchart2d-3.2.2.jar" ]; then
+  jars="$jars:$mydir/jchart2d-code/jchart2d-3.2.2.jar"
+  ext="$mydir/jchart2d-code/ext"
+elif [ -e "$mydir/../share/java/jchart2d-3.2.2.jar" ]; then
+  jars="$jars:$mydir/../share/java/jchart2d-3.2.2.jar"
+  ext="$mydir/../share/java"
+elif [ -e "/usr/share/java/jchart2d-3.2.2.jar" ]; then
+  jars="$jars:/usr/share/java/jchart2d-3.2.2.jar"
+  ext="/usr/share/java"
+else
+  echo "Unable to find 'jchart2d-3.2.2.jar'; please check your installation" >&2
+  exit 1
+fi
+
+jars="$jars:@LCM_EXT_XMLGRAPHICS_COMMONS_JAR@"
+jars="$jars:@LCM_EXT_JIDE_OSS_JAR@"
+
+# Add user's CLASSPATH, if set
+[ -n "$CLASSPATH" ] && jars="$jars:$CLASSPATH"
+
+# Launch the applet
+exec java -server -Djava.net.preferIPv4Stack=true -Xmx128m -Xms64m -ea -cp "$jars" lcm.spy.Spy "$@"

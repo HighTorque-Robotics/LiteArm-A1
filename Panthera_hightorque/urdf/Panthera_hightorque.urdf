@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Panthera_hightorque">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.13851438210271E-05 1.97750326448845E-05 -0.0922543547626578"
+        rpy="0 0 0" />
+      <mass
+        value="1.50223075674128" />
+      <inertia
+        ixx="0.00165880797392824"
+        ixy="3.94688534878552E-07"
+        ixz="1.61741843521794E-07"
+        iyy="0.00165790877076524"
+        iyz="1.38341552816542E-07"
+        izz="0.00326085108970316" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="8.27605701317014E-05 -0.00615400683514963 -0.00522738686375784"
+        rpy="0 0 0" />
+      <mass
+        value="0.42" />
+      <inertia
+        ixx="9.75348158882579E-05"
+        ixy="-1.6173661707928E-07"
+        ixz="3.94688231580596E-07"
+        iyy="0.000108887103032186"
+        iyz="-1.14376080907361E-05"
+        izz="9.09667558200446E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.1200000 0.00628024890175835 -0.00472453918304733"
+        rpy="0 0 0" />
+      <mass
+        value="0.623" />
+      <inertia
+        ixx="0.000201201482569508"
+        ixy="-4.60301328753442E-06"
+        ixz="-1.65975668638592E-05"
+        iyy="0.000350653967228759"
+        iyz="8.50698540954887E-06"
+        izz="0.000310687302621721" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 -0.095765 3.1416" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.09500000 -0.0109678019500067 -0.000861515625674432"
+        rpy="0 0 0" />
+      <mass
+        value="0.44" />
+      <inertia
+        ixx="0.00014326808596337"
+        ixy="5.80065860730017E-06"
+        ixz="4.96834568582312E-06"
+        iyy="0.000258031847332499"
+        iyz="1.48573925605987E-06"
+        izz="0.000201105290524551" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0.25672 0 0"
+      rpy="-3.1416 0 -2.9234" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.035000 -0.0320653530477424 -0.00368219564831916"
+        rpy="0 0 0" />
+      <mass
+        value="0.286" />
+      <inertia
+        ixx="6.75172330804967E-05"
+        ixy="2.34408641255672E-05"
+        ixz="-1.97683657290439E-06"
+        iyy="9.14281582617467E-05"
+        iyz="8.18132936827568E-07"
+        izz="7.87467889947307E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0.24924 0 0"
+      rpy="0 0 0.12241" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="0.00600000 5.60547752509089E-05 -0.0093270848079311"
+        rpy="0 0 0" />
+      <mass
+        value="0.24" />
+      <inertia
+        ixx="2.02943040503E-05"
+        ixy="-9.21502307014673E-11"
+        ixz="-3.34266669773665E-06"
+        iyy="1.77107611523045E-05"
+        iyz="-8.23841685469807E-08"
+        izz="1.42872397925188E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.08025 0 -0.0029"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="0 -5.5511E-17 0.023603"
+        rpy="0 0 0" />
+      <mass
+        value="0.001" />
+      <inertia
+        ixx="3.4664E-07"
+        ixy="4.3908E-23"
+        ixz="-1.5825E-23"
+        iyy="3.4664E-07"
+        iyz="-5.3669E-22"
+        izz="6.3173E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Panthera_hightorque/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="1" />
+  </joint>
+</robot>

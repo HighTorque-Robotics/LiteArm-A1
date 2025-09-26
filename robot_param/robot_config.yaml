@@ -1,0 +1,3 @@
+robot:
+  name: "HI"
+  param_file: "../robot_param/6dot_LiteArmA1_ht_model_test_Orin_params.yaml"

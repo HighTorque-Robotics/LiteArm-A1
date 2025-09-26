@@ -1,0 +1,36 @@
+# LiteArm 配置文件
+
+# 机器人基本配置
+robot:
+  name: "LiteArm"
+  dof: 6  # 自由度
+  
+# URDF文件配置
+urdf:
+  file_path: "/home/sunteng/Project/LiteArm-A1/arm_description/urdf/arm_description.urdf"
+  base_link: "base_link"  # 基座链接名称
+  end_effector_link: "Link_6"  # 末端执行器链接名称
+  tcp_joint: "Joint_6"  # TCP（工具中心点）关节名称
+  
+# 运动学配置
+kinematics:
+  # 关节名称列表（按顺序）
+  joint_names:
+    - "Joint_1"
+    - "Joint_2"  
+    - "Joint_3"  
+    - "Joint_4"  
+    - "Joint_5"
+    - "Joint_6"
+  
+  # 关节限位（弧度）
+  joint_limits:
+    lower: [-3.14, -3.14, -3.14, -3.14, -3.14, -3.14]
+    upper: [3.14, 3.14, 3.14, 3.14, 3.14, 3.14]
+    
+# 控制参数
+control:
+  default_velocity: 0.5  # 默认速度（弧度/秒）
+  default_max_torque: 10.0  # 默认最大力矩（Nm）
+  position_tolerance: 0.01  # 位置容差（弧度）
+  timeout: 10.0  # 默认超时时间（秒）
