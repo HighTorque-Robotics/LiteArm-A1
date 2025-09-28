@@ -1,5 +1,6 @@
 # LiteArm-A1 部分 demo 例程说明
 
+![功能演示](https://github.com/HighTorque-Robotics/LiteArm-A1/blob/main/ezgif.com-video-to-gif-converter%20(1).gif)
 
 ### 安装说明
 
