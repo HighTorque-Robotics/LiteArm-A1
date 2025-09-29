@@ -2,7 +2,7 @@
 
 ![功能演示](https://github.com/HighTorque-Robotics/LiteArm-A1/blob/main/ezgif.com-video-to-gif-converter%20(1).gif)
 
-### 安装说明
+## 安装说明
 
 #### 安装依赖
 
